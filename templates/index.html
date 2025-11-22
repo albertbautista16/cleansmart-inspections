@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>CleanSmart Inspections – Dashboard</h1>
+    <p><a href="/new">Create New Inspection Report</a></p>
+
+    {% if reports %}
+        <h2>Reports</h2>
+        <ul>
+        {% for r in reports %}
+            <li>
+                #{{ r.id }} – {{ r.client_name }} ({{ r.report_type }}) – {{ r.property_address }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No reports yet.</p>
+    {% endif %}
+</body>
+</html>
